@@ -1,3 +1,4 @@
+import { RecoilRoot } from "recoil";
 import ProductList from "./pages/ProductList";
 import GlobalStyle from "./styles/GlobalStyle";
 
@@ -5,7 +6,9 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <ProductList />
+      <RecoilRoot>
+        <ProductList />
+      </RecoilRoot>
     </>
   );
 }
