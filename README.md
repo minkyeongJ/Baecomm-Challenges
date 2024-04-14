@@ -17,23 +17,47 @@
 - 상태관리 툴: recoil
   - 프로젝트 규모가 작고 보일러플레이트가 간단하여 선택하였습니다.
 
-# 3. 구현 화면
+# 3. 파일트리
 
-## 3.1. 검색
+```
+📦src
+ ┣ 📂apis //api 통신
+ ┣ 📂components //공통 컴포넌트 관련 파일
+ ┣ 📂helper
+ ┃ ┣ 📂constants
+ ┃ ┣ 📂types
+ ┃ ┗ 📂utils
+ ┣ 📂hooks //page 별 비즈니스 로직
+ ┣ 📂pages //page 관련 파일
+ ┃ ┣ 📂ProductDetail
+ ┃ ┗ 📂ProductList
+ ┣ 📂recoil //recoil 관련 파일
+ ┃ ┗ 📂atoms
+ ┣ 📂styles //공통 스타일 관련 파일
+ ┣ 📜App.tsx
+ ┣ 📜error-page.jsx
+ ┣ 📜index.css
+ ┣ 📜index.tsx
+ ┗ 📜react-app-env.d.ts
+```
 
-## 3.2. 더보기
+# 4. 구현 화면
 
-## 3.3. 상품 상세페이지
+## 4.1. 검색
 
-## 3.4. 목록으로 돌아가기
+## 4.2. 더보기
 
-# 4. 프로젝트 요구사항
+## 4.3. 상품 상세페이지
 
-4.1. API
+## 4.4. 목록으로 돌아가기
+
+# 5. 프로젝트 요구사항
+
+## 5.1. API
 
 - [x] 다음 사이트에 있는 API를 사용한다. https://dummyjson.com/docs/products
 
-  4.2. 상품 목록 페이지
+## 5.2. 상품 목록 페이지
 
 - [x] 페이지 상단에 검색어를 입력할 수 있는 input과 "검색" 버튼이 있다.
 
@@ -61,7 +85,7 @@
 
   - [x] 더 표시할 상품이 있을 때에만 버튼이 표시된다.
 
-    4.3. 상품 상세 페이지
+## 5.3. 상품 상세 페이지
 
 - [x] 페이지 상단에 "목록으로 돌아가기" 버튼이 있다.
 
@@ -73,7 +97,7 @@
 
   - [x] 목록에서 선택한 상품의 thumbnail image, brand, title, price, description과 images 배열의 각 image가 모두 표시된다.
 
-# 5. 트러블 슈팅
+# 6. 트러블 슈팅
 
 ## Recoil selector를 사용하여 productList 업데이트시 mounted 시점 에러
 
@@ -120,11 +144,11 @@
 - 기능을 구현하는 데 어떤 방식이 제일 적합한지 고민하고 피드백 받는 것이 중요하다는 것을 다시 깨달았습니다.
 - Recoil의 사용방법에 대해 이해가 높아졌습니다.
 
-# 6. 목업
+# 7. 목업
 
 ![image](https://github.com/minkyeongJ/Baecomm-Challenges/assets/67677374/023ca380-44db-4439-948b-b1004c30b061)
 
-## 7. 라우터
+# 8. 라우터
 
 | page      | router              |
 | --------- | ------------------- |
