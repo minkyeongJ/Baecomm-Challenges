@@ -39,14 +39,6 @@ const GlobalStyle = createGlobalStyle`
 
   /* 전역 적용 스타일 */
   :root {
-    --logo-black: #212121;
-    --logo-yellow: #ffbb2f;
-    --btn-gray: #dedede;
-    --error-red: #eb5757;
-    --gray-color: #767676;
-    --light-gray: #c4c4c4;
-    --comment-black: #333333;
-    --success-green: #00b890;
   }
 
   html {
