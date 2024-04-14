@@ -1,4 +1,4 @@
-import { Form, Link } from "react-router-dom";
+import { Form, NavLink } from "react-router-dom";
 import SearchBar from "../../components/SearchBar";
 import { PRODUCT_DETAIL_ROUTE } from "../../helper/constants/routes";
 import useProductList from "../../hooks/useProductList";
@@ -54,9 +54,9 @@ const ProductList = () => {
         </SearchBarContainer>
         <ProductContainer>
           {productList?.products?.map((product) => (
-            <Link to={PRODUCT_DETAIL_ROUTE(product.id)} key={product.id}>
+            <NavLink to={PRODUCT_DETAIL_ROUTE(product.id)} key={product.id}>
               <ProductListItem product={product} />
-            </Link>
+            </NavLink>
           ))}
         </ProductContainer>
         <MoreButtonContainer>

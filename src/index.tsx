@@ -6,17 +6,26 @@ import ErrorPage from "./error-page";
 import "./index.css";
 import ProductDetail from "./pages/ProductDetail";
 import { loader as productListLoader } from "./hooks/useProductList";
+import { loader as productDetailLoader } from "./hooks/useProductDetail";
+import ProductList from "./pages/ProductList";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
-    loader: productListLoader,
-  },
-  {
-    path: "product/:productId",
-    element: <ProductDetail />,
+    children: [
+      {
+        path: "/",
+        element: <ProductList />,
+        loader: productListLoader,
+      },
+      {
+        path: "product/:productId",
+        element: <ProductDetail />,
+        loader: productDetailLoader,
+      },
+    ],
   },
 ]);
 

@@ -23,3 +23,7 @@ export type ProductListLoader = {
   loaderProducts: ProductList;
   query: string;
 };
+
+export type ProductDetailLoader = {
+  loaderProductItem: ProductItem;
+};
