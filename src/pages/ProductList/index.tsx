@@ -1,22 +1,21 @@
-import { Form, useLoaderData } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import SearchBar from "../../components/SearchBar";
-import { ProductListLoader } from "../../types/products";
-import { Link } from "react-router-dom";
 import { PRODUCT_DETAIL_ROUTE } from "../../helper/constants/routes";
+import useProductList from "../../hooks/useProductList";
 
 const ProductList = () => {
-  const { loaderProducts, query } = useLoaderData() as ProductListLoader;
+  const { productList, searchQuery, isMore, getMoreProduct } = useProductList();
 
   return (
     <>
       <h1>상품리스트</h1>
       <section>
         <Form id="search-form" role="search">
-          <SearchBar id="search" name="search" query={query} />
+          <SearchBar id="search" name="search" query={searchQuery} />
         </Form>
       </section>
       <section>
-        {loaderProducts?.products?.map((product) => (
+        {productList?.products?.map((product) => (
           <li key={product.id}>
             <Link to={PRODUCT_DETAIL_ROUTE(product.id)}>
               <div key={product.id}>
@@ -28,6 +27,11 @@ const ProductList = () => {
             </Link>
           </li>
         ))}
+        {isMore && (
+          <button type="button" onClick={getMoreProduct}>
+            더보기
+          </button>
+        )}
       </section>
     </>
   );
