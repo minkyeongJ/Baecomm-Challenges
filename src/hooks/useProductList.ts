@@ -6,7 +6,7 @@ import fetchSelectProductList from "../apis/fetchSelectProductList";
 import { PRODUCT_LIMIT } from "../helper/constants/products";
 import { productListState } from "../recoil/atoms/productListState";
 import { searchState } from "../recoil/atoms/searchState";
-import { ProductList, ProductListLoader } from "../types/products";
+import { ProductList, ProductListLoader } from "../helper/types/products";
 import { scrollPositionState } from "../recoil/atoms/scrollPositionState";
 
 //검색을 위한 로더 함수

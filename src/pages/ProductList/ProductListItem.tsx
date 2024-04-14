@@ -1,4 +1,4 @@
-import { ProductItem } from "../../types/products";
+import { ProductItem } from "../../helper/types/products";
 import * as S from "./ProductListItem.styled";
 interface Props {
   product: ProductItem;

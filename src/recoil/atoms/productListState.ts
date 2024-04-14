@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { ProductList } from "../../types/products";
+import { ProductList } from "../../helper/types/products";
 
 export const productListState = atom<ProductList>({
   key: "ProductList",

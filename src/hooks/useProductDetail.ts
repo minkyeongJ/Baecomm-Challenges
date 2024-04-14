@@ -1,7 +1,7 @@
 import { LoaderFunction, useLoaderData } from "react-router-dom";
 import fetchSelectProductItem from "../apis/fetchSelectProductItem";
 import { useEffect } from "react";
-import { ProductDetailLoader, ProductItem } from "../types/products";
+import { ProductDetailLoader, ProductItem } from "../helper/types/products";
 import { useRecoilState } from "recoil";
 import { productDetailState } from "../recoil/atoms/productDetailState";
 

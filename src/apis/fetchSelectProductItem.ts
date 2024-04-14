@@ -1,5 +1,5 @@
 import { API_URL } from "../helper/constants/apiUrl";
-import { ProductList } from "../types/products";
+import { ProductList } from "../helper/types/products";
 
 interface Props {
   productId: string | undefined;
