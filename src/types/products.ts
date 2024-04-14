@@ -18,3 +18,8 @@ export type ProductList = {
   skip: number;
   limit: number;
 };
+
+export type ProductListLoader = {
+  loaderProducts: ProductList;
+  query: string;
+};
