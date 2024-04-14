@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`
+  margin: 20px auto;
   text-align: center;
 `;
 

@@ -15,7 +15,7 @@ const Li = styled.li`
 const BrandTitleContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap 5px;
+  gap: 5px;
   cursor: pointer;
 `;
 
@@ -27,6 +27,7 @@ const Brand = styled.p`
 `;
 
 const Title = styled.p`
+  text-align: right;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -34,7 +35,7 @@ const Title = styled.p`
 
 const Thumbnail = styled.img`
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
 `;
 
