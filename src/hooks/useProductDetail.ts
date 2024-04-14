@@ -11,7 +11,6 @@ export const loader: LoaderFunction = async ({ params: { productId } }) => {
   return { loaderProductItem };
 };
 
-//thumbnail image, brand, title, price, description과 images 배열의 각 image
 interface UseProductDetail {
   productDetail: ProductItem;
 }
@@ -25,6 +24,11 @@ const useProductDetail = (): UseProductDetail => {
       setProductDetail(loaderProductItem);
     }
   }, [loaderProductItem, setProductDetail]);
+
+  useEffect(() => {
+    // 컴포넌트 마운트 시 스크롤 위치 최상단으로 이동
+    window.scrollTo(0, 0);
+  }, []);
 
   return { productDetail };
 };
