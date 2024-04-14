@@ -44,12 +44,17 @@
 # 4. 구현 화면
 
 ## 4.1. 검색
+![search](https://github.com/minkyeongJ/Baecomm-Challenges/assets/67677374/01c0cb11-bb38-4058-b376-65d3b383ae3e)
 
 ## 4.2. 더보기
+![more-item](https://github.com/minkyeongJ/Baecomm-Challenges/assets/67677374/89dd9f24-4d64-402b-879d-ea123edcca44)
 
 ## 4.3. 상품 상세페이지
+![product-detail](https://github.com/minkyeongJ/Baecomm-Challenges/assets/67677374/a4df7689-5e59-467d-9dbc-7fe42774e422)
 
 ## 4.4. 목록으로 돌아가기
+![back-list](https://github.com/minkyeongJ/Baecomm-Challenges/assets/67677374/a9674e82-ed70-4e5c-b37b-bed367b2feca)
+
 
 # 5. 프로젝트 요구사항
 
