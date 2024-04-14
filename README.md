@@ -1,7 +1,10 @@
 # Baecomm-Challenges
 
 배포링크 : https://baecomm-challenges.vercel.app/
-
+```
+## 실행 방법
+$ npm start
+```
 # 1. 프로젝트 목표
 
 배컴 프론트엔드 개발자 사전과제입니다.
