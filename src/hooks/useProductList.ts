@@ -57,21 +57,31 @@ const useProductList = (): UseProductList => {
     };
   }, [throttleScrollHandler, setScrollPosition]);
 
+  // 컴포넌트 마운트 시 저장된 스크롤 위치로 이동
   useEffect(() => {
-    // 컴포넌트 마운트 시 저장된 스크롤 위치로 이동
     window.scrollTo(0, scrollPosition);
   }, [scrollPosition]);
 
   useEffect(() => {
-    //productList atom에 data 저장
     if (loaderProducts) {
-      setProductList(loaderProducts);
+      //productList atom에 data 저장
+      if (productList.skip === 0 || query !== searchQuery) {
+        //데이터 덮어쓰기 방지를 위한 조건
+        setProductList(loaderProducts);
+      }
     }
-    //searchQuery atom에 data 저장
     if (query) {
+      //searchQuery atom에 data 저장
       setSearchQuery(query);
     }
-  }, [loaderProducts, query, searchQuery, setProductList, setSearchQuery]);
+  }, [
+    loaderProducts,
+    productList.skip,
+    query,
+    searchQuery,
+    setProductList,
+    setSearchQuery,
+  ]);
 
   //더보기 버튼 노출 여부
   const isMore = productList.total - productList.products.length > 0;
