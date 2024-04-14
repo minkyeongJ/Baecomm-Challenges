@@ -66,10 +66,9 @@ const useProductList = (): UseProductList => {
         setProductList(loaderProducts);
       }
     }
-    if (query) {
-      //searchQuery atom에 data 저장
-      setSearchQuery(query);
-    }
+
+    //searchQuery atom에 data 저장
+    setSearchQuery(query);
   }, [
     loaderProducts,
     productList.skip,
