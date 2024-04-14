@@ -38,27 +38,25 @@ const useProductList = (): UseProductList => {
   const [scrollPosition, setScrollPosition] =
     useRecoilState(scrollPositionState);
 
+  const handleScroll = () => {
+    if (window.scrollY !== 0) setScrollPosition(window.scrollY);
+  };
+
   //쓰로틀링이 적용된 스크롤 이벤트 핸들러
-  const throttleScrollHandler = throttle(() => {
-    setScrollPosition(window.scrollY);
-  }, 500);
+  const throttleScrollHandler = throttle(handleScroll, 200);
 
   //스크롤 위치 저장을 위한 함수
   useEffect(() => {
-    // 컴포넌트 마운트 시 스크롤 이벤트 리스너 추가
     window.addEventListener("scroll", throttleScrollHandler);
-
-    // 컴포넌트 언마운트 시 스크롤 이벤트 리스너 제거
     return () => {
       window.removeEventListener("scroll", throttleScrollHandler);
     };
-  }, [throttleScrollHandler, setScrollPosition]);
+  }, [throttleScrollHandler]);
 
-  // 컴포넌트 마운트 시 저장된 스크롤 위치로 이동
   useEffect(() => {
-    console.log(scrollPosition);
+    // 페이지 변경 시 스크롤 위치 복원
     window.scrollTo(0, scrollPosition);
-  }, [scrollPosition]);
+  }, [scrollPosition]); // location을 의존성 배열에 추가하여 페이지 변경 감지
 
   useEffect(() => {
     if (loaderProducts) {
