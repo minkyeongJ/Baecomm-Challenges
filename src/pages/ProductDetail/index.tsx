@@ -5,18 +5,18 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const BackButton = styled.button`
+  width: 70%;
+  font-size: medium;
   background-color: #f1f1f1;
   border: none;
   padding: 10px 20px;
   margin: 10px 0;
   cursor: pointer;
-  position: absolute;
-  left: 30px;
-  top: 1vh;
 `;
 
 const ProductDetails = styled.div`
@@ -27,9 +27,32 @@ const ProductDetails = styled.div`
 `;
 
 const ProductThumbnail = styled.img`
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
 `;
+
+const ProductInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: solid 1px lightgrey;
+  padding-top: 30px;
+`;
+
+const ProductBrand = styled.p`
+  color: #333;
+`;
+const ProductTitle = styled.h3`
+  font-size: large;
+`;
+
+const ProductPrice = styled.p`
+  font-size: xx-large;
+  font-weight: 900;
+`;
+
+const ProductDescription = styled.p``;
 
 const ProductImages = styled.div`
   display: flex;
@@ -41,26 +64,6 @@ const ProductImage = styled.img`
   max-width: 100%;
   height: auto;
 `;
-
-const ProductInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
-
-const ProductBrand = styled.p`
-  color: #333;
-`;
-const ProductTitle = styled.h3`
-  font-size: medium;
-`;
-
-const ProductPrice = styled.p`
-  font-size: x-large;
-  font-weight: 900;
-`;
-
-const ProductDescription = styled.p``;
 
 const ProductDetail = () => {
   const navigate = useNavigate();
@@ -74,7 +77,7 @@ const ProductDetail = () => {
           navigate(-1);
         }}
       >
-        ← 뒤로가기
+        목록으로 돌아가기
       </BackButton>
       <ProductDetails>
         <ProductThumbnail

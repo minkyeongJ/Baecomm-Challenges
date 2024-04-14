@@ -29,7 +29,6 @@ interface UseProductList {
   searchQuery: string;
   isMore: boolean;
   getMoreProduct: (e: React.MouseEvent) => void;
-  handleScroll: () => void;
 }
 
 const useProductList = (): UseProductList => {
@@ -39,12 +38,10 @@ const useProductList = (): UseProductList => {
   const [scrollPosition, setScrollPosition] =
     useRecoilState(scrollPositionState);
 
-  // 스크롤 이벤트 핸들러
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
   //쓰로틀링이 적용된 스크롤 이벤트 핸들러
-  const throttleScrollHandler = throttle(handleScroll, 500);
+  const throttleScrollHandler = throttle(() => {
+    setScrollPosition(window.scrollY);
+  }, 500);
 
   //스크롤 위치 저장을 위한 함수
   useEffect(() => {
@@ -59,6 +56,7 @@ const useProductList = (): UseProductList => {
 
   // 컴포넌트 마운트 시 저장된 스크롤 위치로 이동
   useEffect(() => {
+    console.log(scrollPosition);
     window.scrollTo(0, scrollPosition);
   }, [scrollPosition]);
 
@@ -105,7 +103,7 @@ const useProductList = (): UseProductList => {
     }
   };
 
-  return { productList, searchQuery, isMore, handleScroll, getMoreProduct };
+  return { productList, searchQuery, isMore, getMoreProduct };
 };
 
 export default useProductList;
