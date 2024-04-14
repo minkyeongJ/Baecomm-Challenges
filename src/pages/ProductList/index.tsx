@@ -54,7 +54,11 @@ const ProductList = () => {
         </SearchBarContainer>
         <ProductContainer>
           {productList?.products?.map((product) => (
-            <NavLink to={PRODUCT_DETAIL_ROUTE(product.id)} key={product.id}>
+            <NavLink
+              to={PRODUCT_DETAIL_ROUTE(product.id)}
+              key={product.id}
+              preventScrollReset={true}
+            >
               <ProductListItem product={product} />
             </NavLink>
           ))}

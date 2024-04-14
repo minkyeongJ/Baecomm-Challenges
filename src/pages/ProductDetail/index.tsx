@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import useProductDetail from "../../hooks/useProductDetail";
 import styled from "styled-components";
+import LazyImage from "../../components/LazyImage";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -92,7 +93,7 @@ const ProductDetail = () => {
         </ProductInfo>
         <ProductImages>
           {productDetail?.images?.map((image, i) => (
-            <ProductImage
+            <LazyImage
               src={image}
               alt={`${i}번째 ${productDetail.title} 이미지`}
               key={`${image}_${i}`}
