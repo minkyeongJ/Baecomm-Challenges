@@ -1,36 +1,72 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+  /* reset css */
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+
+  *{
+    box-sizing: border-box;
+  }
+
+  html, body, div, span, h1, h2, h3, h4, h5, h6, p, 
+  a, dl, dt, dd, ol, ul, li, form, label, table{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* font-size: 10px; */
+    vertical-align: baseline;
+  }
+
+  body{
+    line-height: 1;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #F6F9F0;
+    margin-bottom: 100px;
+  }
+
+  ol, ul, li{
+    list-style: none;
+  }
+
+  button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  /* 전역 적용 스타일 */
   :root {
-      --logo-black: #212121;
-      --logo-yellow: #ffbb2f;
-      --btn-gray: #dedede;
-      --error-red: #eb5757;
-      --gray-color: #767676;
-      --light-gray: #c4c4c4;
-      --comment-black: #333333;
-      --success-green: #00b890;
+    --logo-black: #212121;
+    --logo-yellow: #ffbb2f;
+    --btn-gray: #dedede;
+    --error-red: #eb5757;
+    --gray-color: #767676;
+    --light-gray: #c4c4c4;
+    --comment-black: #333333;
+    --success-green: #00b890;
   }
 
   html {
-      font-size: 62.5%;
-      margin: 0 auto;
+    font-size: 62.5%;
+    margin: 0 auto;
   }
 
   body {
-      font-size: 1.6rem;
-      line-height: 1.25;
-      font-family: 'SpoqaHanSansNeo-R';
-      background-color: white;
+    font-size: 1.6rem;
+    line-height: 1.25;
+    background-color: white;
   }
 
   .ir {
-      position: absolute;
-      clip: rect(0 0 0 0);
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
   }
 `;
 
